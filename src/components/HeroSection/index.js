@@ -12,9 +12,16 @@ import {
 } from "./HeroElements";
 import Video from "../../videos/video.mp4";
 import { Button } from "../ButtonElement";
+import { Link } from "react-scroll";
+import { DataEng, DataPL } from "./Data";
+import { useLanguage } from "../../context";
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
+
+  const { english } = useLanguage();
+
+  const Data = english ? DataEng : DataPL;
 
   const onHover = () => {
     setHover(!hover);
@@ -27,11 +34,9 @@ const HeroSection = () => {
       </HeroBg>
       <HeroContent>
         <HeroH1>Frontend Developer</HeroH1>
-        <HeroP>
-          I am a beginner frontend developer who loves to code react apps.
-        </HeroP>
+        <HeroP>{Data.p}</HeroP>
         <HeroBtnWrapper onMouseEnter={onHover} onMouseLeave={onHover}>
-          <Button
+          <Link
             to="projects"
             smooth={true}
             duration={500}
@@ -39,8 +44,11 @@ const HeroSection = () => {
             exact="true"
             offset={-80}
           >
-            See my featured projects {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
+            {" "}
+            <Button primary={true} dark={true} big={true} fontBig={true}>
+              {Data.button} {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </Link>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>

@@ -111,3 +111,25 @@ export const NavBtnLink = styled(LinkScroll)`
     color: #010606;
   }
 `;
+
+export const NavLang = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const Eng = styled.img`
+  height: 2rem;
+  cursor: pointer;
+  filter: ${({ english }) => (english ? "grayscale(0)" : "grayscale(1)")};
+`;
+
+export const Pl = styled.img`
+  height: 2rem;
+  cursor: pointer;
+  filter: ${({ english }) => (english ? "grayscale(1)" : "grayscale(0)")};
+`;

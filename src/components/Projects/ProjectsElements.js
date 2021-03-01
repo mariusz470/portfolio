@@ -58,7 +58,6 @@ export const ProjectsCard = styled.div`
 
 export const ProjectsIcon = styled.img`
   height: 160px;
-  width: 160px;
   margin-bottom: 10px;
 `;
 

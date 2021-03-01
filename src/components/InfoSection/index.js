@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import { Button } from "../ButtonElement";
 import {
   Column2,
@@ -14,54 +15,47 @@ import {
   Subtitle,
   BtnWrap,
 } from "./InfoElements";
+import { DataEng, DataPL } from "./Data";
+import { useLanguage } from "../../context";
 
-const InfoSection = ({
-  lightBg,
-  id,
-  imgStart,
-  topLine,
-  lightText,
-  headline,
-  darkText,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  primary,
-  dark,
-  dark2,
-  buttonTo,
-}) => {
+const InfoSection = () => {
+  const { english } = useLanguage();
+
+  const Data = english ? DataEng : DataPL;
+
   return (
     <React.Fragment>
-      <InfoContainer lightBg={lightBg} id={id}>
+      <InfoContainer lightBg={Data.lightBg} id={Data.id}>
         <InfoWrapper>
-          <InfoRow imgStart={imgStart}>
+          <InfoRow imgStart={Data.imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
+                <TopLine>{Data.topLine}</TopLine>
+                <Heading lightText={Data.lightText}>{Data.headline}</Heading>
+                <Subtitle darkText={Data.darkText}>{Data.description}</Subtitle>
                 <BtnWrap>
-                  <Button
-                    to={buttonTo}
+                  <Link
+                    to={Data.buttonTo}
                     smooth={true}
                     duration={500}
                     spy={true}
                     exact="true"
                     offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
                   >
-                    {buttonLabel}
-                  </Button>
+                    <Button
+                      primary={Data.primary ? 1 : 0}
+                      dark={Data.dark ? 1 : 0}
+                      dark2={Data.dark2 ? 1 : 0}
+                    >
+                      {Data.buttonLabel}
+                    </Button>
+                  </Link>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={img} alt={alt} />
+                <Img src={Data.img} alt={Data.alt} />
               </ImgWrap>
             </Column2>
           </InfoRow>

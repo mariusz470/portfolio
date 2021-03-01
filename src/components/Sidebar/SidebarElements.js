@@ -87,3 +87,21 @@ export const SidebarRoute = styled(LinkScroll)`
     color: #010606;
   }
 `;
+
+export const SidebarLang = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+`;
+export const Eng = styled.img`
+  height: 2rem;
+  cursor: pointer;
+  filter: ${({ english }) => (english ? "grayscale(0)" : "grayscale(1)")};
+`;
+
+export const Pl = styled.img`
+  height: 2rem;
+  cursor: pointer;
+  filter: ${({ english }) => (english ? "grayscale(1)" : "grayscale(0)")};
+`;

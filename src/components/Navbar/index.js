@@ -12,10 +12,25 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
+  NavLang,
+  Eng,
+  Pl,
 } from "./NavbarElements";
+import Polish from "../../images/poland.svg";
+import English from "../../images/united-kingdom.svg";
+import { useLanguage } from "../../context";
+import { DataEng, DataPL } from "./Data";
 
 function Navbar({ toggle }) {
   const [scrollNav, setScrollNav] = useState(false);
+
+  const { english, setEnglish } = useLanguage();
+  useEffect(() => {
+    const polish = localStorage.getItem("english") === "false";
+    if (polish) {
+      setEnglish(false);
+    }
+  }, [setEnglish]);
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -32,6 +47,13 @@ function Navbar({ toggle }) {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
+
+  const toggleLanguage = () => {
+    setEnglish(!english);
+    localStorage.setItem("english", !english);
+  };
+
+  const Data = english ? DataEng : DataPL;
 
   return (
     <React.Fragment>
@@ -54,7 +76,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  About
+                  {Data.about}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -66,7 +88,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Skills
+                  {Data.skills}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -78,7 +100,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  My Learning Process
+                  {Data.courses}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -90,7 +112,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Featured Projects
+                  {Data.projects}
                 </NavLinks>
               </NavItem>
             </NavMenu>
@@ -103,9 +125,13 @@ function Navbar({ toggle }) {
                 exact="true"
                 offset={-80}
               >
-                Contact Me
+                {Data.contact}
               </NavBtnLink>
             </NavBtn>
+            <NavLang>
+              <Eng src={English} english={english} onClick={toggleLanguage} />
+              <Pl src={Polish} english={english} onClick={toggleLanguage} />
+            </NavLang>
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
