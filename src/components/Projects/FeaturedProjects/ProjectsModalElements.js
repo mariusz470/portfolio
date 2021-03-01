@@ -14,7 +14,8 @@ export const ProjectTitle = styled.h1`
   text-align: center;
 `;
 export const ProjectImg1 = styled.img`
-  height: 300px;
+  max-width: 100%;
+  max-height: 300px;
   margin-bottom: 10px;
   justify-self: center;
 `;

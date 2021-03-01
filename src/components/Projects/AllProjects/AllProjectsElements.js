@@ -17,7 +17,8 @@ export const ProjectContainer = styled.div`
   color: #fff;
 `;
 export const ProjectImg = styled.img`
-  height: 300px;
+  max-width: 100%;
+  max-height: 300px;
   align-self: center;
   margin: 20px 0 20px;
 `;

@@ -9,6 +9,9 @@ export const ContactFormContainer = styled.form`
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr 1fr;
   gap: 0px 10px;
+  @media screen and (max-width: 550px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContactTitle = styled.h1`
