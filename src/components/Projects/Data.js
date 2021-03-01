@@ -5,8 +5,8 @@ export const DataEng = [
     desc:
       'In this project, I have used styled-components, thanks to this styles are not saved in the CSS file, instead, each component is individually styled, which makes debugging easier, especially for larger projects. To obtain the "smooth scroll" effect I used the react-scroll library. The main page shows the minimum amount of information, after clicking on the cards, the modal will display additional details.',
     tech: ["react", "styled-component"],
-    live: "http://google.com",
-    github: "http://github.com",
+    live: "https://mariuszkicinski.herokuapp.com/",
+    github: "https://github.com/mariusz470/portfolio",
   },
   {
     title: "Pizza Project",
@@ -79,8 +79,8 @@ export const DataPL = [
     desc:
       "W tym projekcie użyłem styled-components, dzięki temu style nie są zapisane w pliku CSS, zamiast tego każdy komponent jest oddzielnie stylowany, ułatwia to debugowanie w przypadku większych projektów. W celu uzyskania efektu „smooth scroll” zastosowałem bibliotekę react-scroll. Na głównej stronie wyświetla się minimalna ilość informacji, po kliknięciu na karty wyświetla się modal ze szczegółami.",
     tech: ["react", "styled-component"],
-    live: "http://google.com",
-    github: "http://github.com",
+    live: "https://mariuszkicinski.herokuapp.com/",
+    github: "https://github.com/mariusz470/portfolio",
   },
   {
     title: "Pizza Project",
