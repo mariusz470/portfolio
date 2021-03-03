@@ -146,3 +146,15 @@ export const DataPL = [
     github: "https://github.com/mariusz470/burger-builder",
   },
 ];
+
+export const TextEng = {
+  h1: "My featured projects",
+  click: "Click on the card to learn more about the project.",
+  button: "Other Projects",
+};
+
+export const TextPL = {
+  h1: "Moje wybrane projekty",
+  click: "Kliknij na kartę, aby dowiedzieć się więcej o projekcie.",
+  button: "Inne Projekty",
+};

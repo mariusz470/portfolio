@@ -14,7 +14,7 @@ import Icon3 from "../../images/kanban.png";
 import { Button } from "../ButtonElement";
 import ProjectsModal from "./FeaturedProjects/ProjectsModal";
 import AllProjects from "./AllProjects";
-import { DataEng, DataPL } from "./Data";
+import { DataEng, DataPL, TextEng, TextPL } from "./Data";
 import { useLanguage } from "../../context";
 
 const Projects = () => {
@@ -27,6 +27,8 @@ const Projects = () => {
   const { english } = useLanguage();
 
   const Data = english ? DataEng : DataPL;
+
+  const Text = english ? TextEng : TextPL;
 
   const onOpen = (obj) => {
     setItem(obj);
@@ -41,32 +43,26 @@ const Projects = () => {
 
   return (
     <ProjectsContainer id="projects">
-      <ProjectsH1>My featured projects</ProjectsH1>
+      <ProjectsH1>{Text.h1}</ProjectsH1>
       <ProjectsWrapper>
         <ProjectsCard onClick={() => onOpen(Data[0])}>
           <ProjectsIcon src={Icon1} />
           <ProjectsH2>Portfolio website</ProjectsH2>
-          <ProjectsP>
-            Click on the card to learn more about the project.
-          </ProjectsP>
+          <ProjectsP>{Text.click}</ProjectsP>
         </ProjectsCard>
         <ProjectsCard onClick={() => onOpen(Data[1])}>
           <ProjectsIcon src={Icon2} />
           <ProjectsH2>Pizza ordering app</ProjectsH2>
-          <ProjectsP>
-            Click on the card to learn more about the project.
-          </ProjectsP>
+          <ProjectsP>{Text.click}</ProjectsP>
         </ProjectsCard>
         <ProjectsCard onClick={() => onOpen(Data[2])}>
           <ProjectsIcon src={Icon3} />
           <ProjectsH2>Kanban Board</ProjectsH2>
-          <ProjectsP>
-            Click on the card to learn more about the project.
-          </ProjectsP>
+          <ProjectsP>{Text.click}</ProjectsP>
         </ProjectsCard>
       </ProjectsWrapper>
       <Button primary={true} dark={true} onClick={onOpenAll}>
-        Other Projects
+        {Text.button}
       </Button>
       <ProjectsModal item={item} onClose={onClose} show={show} />
       <AllProjects onClose={onCloseAll} show={showAll} />
