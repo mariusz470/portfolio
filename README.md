@@ -6,7 +6,7 @@ This is my Portfolio Page coded in React, styled-components, react-scroll, mailJ
 
 [Portfolio](https://mariuszkicinski.herokuapp.com/)
 
-##Installation
+## Installation
 
 ```bash
 npm install
