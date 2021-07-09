@@ -9,7 +9,7 @@ import {
   ProjectsWrapper,
 } from "./ProjectsElements";
 import Icon1 from "../../images/portfolio.png";
-import Icon2 from "../../images/pizza.png";
+import Icon2 from "../../images/jsxcode.png";
 import Icon3 from "../../images/kanban.png";
 import { Button } from "../ButtonElement";
 import ProjectsModal from "./FeaturedProjects/ProjectsModal";
@@ -50,9 +50,9 @@ const Projects = () => {
           <ProjectsH2>Portfolio website</ProjectsH2>
           <ProjectsP>{Text.click}</ProjectsP>
         </ProjectsCard>
-        <ProjectsCard onClick={() => onOpen(Data[1])}>
+        <ProjectsCard onClick={() => onOpen(Data[8])}>
           <ProjectsIcon src={Icon2} />
-          <ProjectsH2>Pizza ordering app</ProjectsH2>
+          <ProjectsH2>JSX Code</ProjectsH2>
           <ProjectsP>{Text.click}</ProjectsP>
         </ProjectsCard>
         <ProjectsCard onClick={() => onOpen(Data[2])}>
